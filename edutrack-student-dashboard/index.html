@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduTrack — Student Course & Task Manager</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>EduTrack</h1>
+        <p>Student Manager</p>
+      </div>
+      <nav aria-label="Sidebar navigation">
+        <ul class="nav-list">
+          <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+          <li><a href="#profile" class="nav-link">Profile</a></li>
+          <li><a href="#courses" class="nav-link">Courses</a></li>
+          <li><a href="#tasks" class="nav-link">Tasks</a></li>
+          <li><a href="#progress" class="nav-link">Progress</a></li>
+          <li><a href="#grades" class="nav-link">Grades</a></li>
+          <li><a href="#quiz" class="nav-link">Quiz</a></li>
+          <li><a href="#password" class="nav-link">Password Generator</a></li>
+          <li><a href="#quotes" class="nav-link">Quotes</a></li>
+          <li><a href="#api" class="nav-link">API Resource</a></li>
+          <li><a href="#tools" class="nav-link">JS Tools</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content" aria-live="polite">
+      <header class="topbar">
+        <h2 id="section-title">Dashboard</h2>
+        <p>Welcome to your student productivity hub.</p>
+      </header>
+
+      <section id="dashboard" class="panel active-panel" aria-label="Dashboard section"><h3>Dashboard</h3><div id="dashboard-content"></div></section>
+      <section id="profile" class="panel"><h3>Profile</h3><div id="profile-content"></div></section>
+      <section id="courses" class="panel"><h3>Courses</h3><div id="courses-content"></div></section>
+      <section id="tasks" class="panel"><h3>Tasks</h3><div id="tasks-content"></div></section>
+      <section id="progress" class="panel"><h3>Progress</h3><div id="progress-content"></div></section>
+      <section id="grades" class="panel"><h3>Grades</h3><div id="grades-content"></div></section>
+      <section id="quiz" class="panel"><h3>Quiz</h3><div id="quiz-content"></div></section>
+      <section id="password" class="panel"><h3>Password Generator</h3><div id="password-content"></div></section>
+      <section id="quotes" class="panel"><h3>Quotes</h3><div id="quotes-content"></div></section>
+      <section id="api" class="panel"><h3>API Resource</h3><div id="api-content"></div></section>
+      <section id="tools" class="panel"><h3>JS Tools</h3><div id="tools-content"></div></section>
+    </main>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

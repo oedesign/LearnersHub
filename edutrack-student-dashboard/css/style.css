@@ -1,0 +1,313 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --primary: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, #eef2ff 0%, #f8fafc 45%, #f1f5f9 100%);
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.sidebar {
+  background: #0f172a;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.brand h1 { margin: 0; font-size: 1.5rem; }
+.brand p { margin: 0.25rem 0 1.5rem; color: #cbd5e1; font-size: 0.9rem; }
+
+.nav-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
+.nav-link {
+  display: block;
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.6rem;
+  transition: all 0.2s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(59, 130, 246, 0.25);
+  color: #fff;
+}
+
+.main-content { padding: 1.25rem; }
+.topbar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+.topbar h2 { margin: 0; }
+.topbar p { margin: 0.25rem 0 0; color: var(--muted); }
+
+.panel {
+  display: none;
+  margin-top: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+.panel h3 { margin-top: 0; }
+.active-panel { display: block; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+}
+.card {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+  background: #f8fafc;
+}
+.card .value { font-size: 1.5rem; color: var(--primary-dark); font-weight: 700; }
+
+@media (max-width: 900px) {
+  .app-layout { grid-template-columns: 1fr; }
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+  .nav-list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+.profile-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.profile-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.profile-form input,
+.profile-form select,
+.profile-form button {
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+}
+
+.profile-form button {
+  margin-top: 0.8rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-message { min-height: 1.2rem; font-size: 0.9rem; }
+.form-message.success { color: #15803d; }
+.form-message.error { color: #b91c1c; }
+
+.welcome-card { margin-bottom: 0.9rem; }
+
+body.dark-theme {
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --surface: #0f172a;
+  --border: #1e293b;
+  background: linear-gradient(160deg, #020617 0%, #0b1220 60%, #111827 100%);
+}
+
+body.dark-theme .card {
+  background: #111b31;
+}
+
+.course-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.6rem;
+}
+
+.course-actions button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.empty-state {
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 0.75rem;
+  color: var(--muted);
+}
+
+.overdue-task {
+  border-color: #dc2626;
+  background: #fff1f2;
+}
+
+.overdue-text {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+body.dark-theme .overdue-task {
+  background: #3a0d16;
+  border-color: #f87171;
+}
+
+.progress-toolbar {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.progress-track {
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #2563eb, #22c55e);
+  transition: width 0.2s ease;
+}
+
+.api-result {
+  background: #0b1220;
+  color: #e2e8f0;
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  overflow: auto;
+  min-height: 120px;
+}
+
+/* Portfolio polish */
+:root {
+  --radius: 14px;
+}
+
+h1, h2, h3, h4 { letter-spacing: 0.2px; }
+p, li, label, input, select, button, textarea { line-height: 1.45; }
+
+.main-content { padding: 1.5rem; }
+.panel { padding: 1.2rem; border-radius: var(--radius); }
+.card { border-radius: var(--radius); padding: 1rem; }
+
+button,
+input,
+select,
+a {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .12s ease;
+}
+
+button:hover,
+.nav-link:hover {
+  transform: translateY(-1px);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.25);
+  border-color: var(--primary);
+}
+
+.profile-form input,
+.profile-form select,
+.profile-form button,
+.course-actions button,
+.filter-btn {
+  min-height: 40px;
+}
+
+.sidebar {
+  border-right: 1px solid rgba(148,163,184,.2);
+}
+
+@media (max-width: 900px) {
+  .main-content { padding: 1rem; }
+  .sidebar {
+    padding: 1rem 0.8rem;
+  }
+  .nav-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 0.4rem;
+    grid-template-columns: none;
+  }
+  .nav-list li { flex: 0 0 auto; }
+  .nav-link { white-space: nowrap; }
+}
+
+@media (max-width: 600px) {
+  .topbar { padding: 1rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .profile-form .form-grid { grid-template-columns: 1fr; }
+}
+
+body.dark-theme .topbar,
+body.dark-theme .panel,
+body.dark-theme .card,
+body.dark-theme .profile-form input,
+body.dark-theme .profile-form select,
+body.dark-theme .profile-form button,
+body.dark-theme .filter-btn,
+body.dark-theme .course-actions button {
+  box-shadow: none;
+}
+
+body.dark-theme .profile-form input,
+body.dark-theme .profile-form select,
+body.dark-theme .filter-btn,
+body.dark-theme .course-actions button {
+  background: #0b1220;
+  color: #e2e8f0;
+}
